@@ -1,5 +1,3 @@
-# hogehoge
-
 # TweetApp
 
 ## Install prerequisites

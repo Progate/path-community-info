@@ -34,7 +34,7 @@
         </div>
       <% } %>
       <div class="comments-new">
-        <form action=""  data-test="form">
+        <form action="/posts/<%= post.id %>/comments" method="POST" data-test="form">
           <div class="comments-form">
             <textarea name="content" data-test="textarea-content" required></textarea>
             <input type="submit" value="Comment" data-test="submit">
@@ -54,8 +54,8 @@
               <div class="comment-content" data-test="comment-content"><%= comment.content %></div>
               <% if(comment.user.equal(currentUser)) {%>
               <div class="comment-menus">
-                <a href="" data-test="link-comment-edit">Edit</a>
-                <form action="" data-test="form-comment-delete">
+                <a href="/posts/<%= post.id %>/comments/<%= comment.id %>/edit" data-test="link-comment-edit">Edit</a>
+                <form action="/posts/<%= post.id %>/comments/<%= comment.id %>?_method=DELETE" method="POST" data-test="form-comment-delete">
                   <input type="submit" value="Delete" data-test="submit-comment-delete">
                 </form>
               </div>
